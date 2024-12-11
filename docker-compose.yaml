@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  app:
+    build: .
+    ports:
+      - "4000:4000"
+    depends_on:
+      - db
+    environment:
+      PORT: 4000
+      DB_HOST: db
+      DB_USER: projet_user
+      DB_PASSWORD: toor
+      DB_NAME: projetk8
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: toor
+      MYSQL_DATABASE: projetk8
+      MYSQL_USER: root
+      MYSQL_PASSWORD: toor
+    ports:
+      - "3306:3306"
