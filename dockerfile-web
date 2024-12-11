@@ -1,0 +1,20 @@
+# Étape 1 : Utiliser une image Node.js officielle comme base
+FROM node:latest
+
+# Étape 2 : Définir le répertoire de travail
+WORKDIR /usr/src/app
+
+# Étape 3 : Copier les fichiers de package pour installer les dépendances
+COPY package*.json ./
+
+# Étape 4 : Installer les dépendances
+RUN npm install
+
+# Étape 5 : Copier le reste des fichiers de l'application
+COPY . .
+
+# Étape 6 : Exposer le port utilisé par l'application
+EXPOSE 4000
+
+# Étape 7 : Définir la commande pour démarrer l'application
+CMD ["node", "server.js"]

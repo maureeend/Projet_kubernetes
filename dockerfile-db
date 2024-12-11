@@ -1,0 +1,9 @@
+FROM mysql:latest
+
+ENV MYSQL_ROOT_PASSWORD=toor
+ENV MYSQL_DATABASE=projetk8
+ENV MYSQL_PASSWORD=toor
+
+COPY init.sql /docker-entrypoint-initdb.d/
+
+EXPOSE 3306

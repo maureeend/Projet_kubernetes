@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recherche utilisateur</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Rechercher un utilisateur</h1>
+    
+    <div class="card">
+      <form action="/search" method="GET">
+        <div class="form-group">
+          <label for="query">Recherche</label>
+          <input 
+            type="text" 
+            id="query" 
+            name="query" 
+            required 
+            placeholder="Rechercher par nom, prénom ou email"
+          >
+        </div>
+
+        <button type="submit" class="button">Rechercher</button>
+      </form>
+    </div>
+
+    <div class="text-center">
+      <a href="/" class="link">Retour à l'accueil</a>
+    </div>
+  </div>
+</body>
+</html>

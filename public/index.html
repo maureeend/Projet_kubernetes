@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestion des utilisateurs</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Ajout d'un utilisateur</h1>
+    
+    <div class="card">
+      <form action="/users" method="POST">
+        <div class="form-group">
+          <label for="first_name">Prénom</label>
+          <input 
+            type="text" 
+            id="first_name" 
+            name="first_name" 
+            required 
+            placeholder="Entrez votre prénom"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="last_name">Nom</label>
+          <input 
+            type="text" 
+            id="last_name" 
+            name="last_name" 
+            required 
+            placeholder="Entrez votre nom"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="email">Adresse email</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            required 
+            placeholder="exemple@email.com"
+          >
+        </div>
+
+        <button type="submit" class="button">Ajouter l'utilisateur</button>
+      </form>
+    </div>
+
+    <div class="text-center">
+      <a href="/search-page" class="button button-secondary button-compact">
+        Rechercher
+      </a>
+    </div>
+  </div>
+</body>
+</html>
