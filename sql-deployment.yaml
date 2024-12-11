@@ -38,13 +38,25 @@ spec:
         - containerPort: 3306
         env:
         - name: MYSQL_ROOT_PASSWORD
-          value: "toor"
+          valueFrom:
+            secretKeyRef:
+              name: db-credentials
+              key: DB_PASSWORD
         - name: MYSQL_DATABASE
-          value: "projetk8"
+          valueFrom:
+            secretKeyRef:
+              name: db-credentials
+              key: DB_NAME
         - name: MYSQL_USER
-          value: "projet_user"
+          valueFrom:
+            secretKeyRef:
+              name: db-credentials
+              key: DB_USER
         - name: MYSQL_PASSWORD
-          value: "toor"
+          valueFrom:
+            secretKeyRef:
+              name: db-credentials
+              key: DB_PASSWORD
         volumeMounts:
         - name: mysql-persistent-storage
           mountPath: /var/lib/mysql
